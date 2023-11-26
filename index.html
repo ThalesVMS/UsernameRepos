@@ -1,1 +1,28 @@
-<html><head><title>C:\Users\PC\PycharmProjects\ReposGit\repositorio\templates</title></head><body><a href="index.html.html">index.html</a><br /></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositórios Github</title>
+</head>
+<body>
+    <h1>Github Repositories</h1>
+
+    <form method="post" action="/">
+        <label for="username">Coloque o nome de usuário do GitHub:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if repo_names %}
+        <h2>Repositórios:</h2>
+        <ul>
+            {% for repo in repo_names %}
+                <li>{{ repo }}</li>
+            {% endfor %}
+        </ul>
+        <p>Total de Repositórios: {{ total_repos }}</p>
+    {% endif %}
+</body>
+</html>
